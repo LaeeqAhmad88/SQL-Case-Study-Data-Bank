@@ -79,7 +79,7 @@ This table stores all customer deposits, withdrawals and purchases made using th
 | 188| 2020-01-13	| deposit	| 601 |
 | 138| 2020-01-11	| deposit	| 520 |
 
-Schema
+## Schema
 Relevant schema SQL schema for this case stidy can be found in the repository!
 
 Case Study Questions

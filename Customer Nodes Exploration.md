@@ -1,19 +1,20 @@
 # A. Customer Nodes Exploration
-### 1. How many unique nodes are there on the Data Bank system?
-'''sql
+** 1. How many unique nodes are there on the Data Bank system?**
+
+```sql
 SELECT 
     COUNT(DISTINCT node_id) AS number_of_nodes
 FROM 
     customer_nodes;
-'''
+```
 **Output:**
 
 |number_of_nodes|
 |---------------|
 |5|
 
-### 2. What is the number of nodes per region?
-
+**2. What is the number of nodes per region?**
+```sql
 SELECT
 	cn.region_id,
     region_name,
@@ -26,7 +27,8 @@ GROUP BY
 	region_id, region_name
 ORDER BY
 	region_id ASC;
-Output:
+```
+**Output:**
 
 |region_id	|region_name	|number_of_nodes|
 |-----------|-------------|---------------|
@@ -36,8 +38,8 @@ Output:
 |4	|Asia	|665|
 |5	|Europe	|616|
 
-### 3. How many customers are allocated to each region?
-
+**3. How many customers are allocated to each region?**
+```sql
 SELECT
 	cn.region_id,
     region_name,
@@ -51,7 +53,8 @@ GROUP BY
     region_name
 ORDER BY
 	region_id ASC;
-Output:
+```
+**Output:**
 
 |region_id	|region_name	|number_of_customers|
 |-----------|-------------|-------------------|
@@ -61,8 +64,8 @@ Output:
 |4	|Asia	|95|
 |5	|Europe	|88|
 
-### 4. How many days on average are customers reallocated to a different node?
-
+**4. How many days on average are customers reallocated to a different node?**
+```sql
 SELECT
 	ROUND(AVG(days_difference), 2) AS average_reallocation_days
 FROM 
@@ -72,15 +75,17 @@ FROM
 	customer_nodes
 WHERE 
 	end_date IS NOT NULL AND end_date NOT LIKE '9999%' -- This is removing invalid dates from the data set which might be because of typing error.
-    ) AS reallocation_days; -- Inner sub-query is calculating the difference between start date and end date. And then we are taking the average of those difference values to calculate average reallocation days.
+    ) AS reallocation_days;
+```
+-- Inner sub-query is calculating the difference between start date and end date. And then we are taking the average of those difference values to calculate average reallocation days.
 Output:
 
 |average_reallocation_days|
 |-------------------------|
 |14.63|
 
-### 5. What is the median, 80th, and 95th percentile for this same reallocation days metric for each region?
-
+**5. What is the median, 80th, and 95th percentile for this same reallocation days metric for each region?**
+```sql
 WITH RankedMetrics AS ( -- Ranking the rows ordered by reallocation days and partitioned by region_id
     SELECT
         region_id,
@@ -106,7 +111,8 @@ SELECT
     FIRST_VALUE(_95thPercentile) OVER (PARTITION BY region_id ORDER BY _95thPercentile DESC) AS _95thPercentile -- when 95th percentile is ordered in descending order then it is picking last value (it'll will have a percent rank of 0.95 within specified region)
 FROM Percentiles p
 INNER JOIN regions r ON p.region_id = r.region_id;
-Output:
+```
+**Output:**
 
 |region_id	|region_name	|Median	| 80thPercentile	| 95thPercentile|
 |-----------|-------------|-------|-----------------|---------------|

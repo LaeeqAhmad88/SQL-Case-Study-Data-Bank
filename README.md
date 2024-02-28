@@ -24,7 +24,7 @@ This case study is all about calculating metrics, growth and helping the
 business analyze their data in a smart way to better forecast and plan for their
 future developments
 
-# Available Data
+## Available Data
 The Data Bank team has prepared a data model for this case study as well as a few example rows from the complete dataset below to get you familiar with their tables.
 
 # Entity Relationship Diagram
@@ -32,7 +32,7 @@ The Data Bank team has prepared a data model for this case study as well as a fe
 ![image](https://github.com/LaeeqAhmad88/SQL-Case-Study-Data-Bank/assets/143387882/e648fe0b-387a-4fa0-9939-123eb6769dbb)
 
 
-# Table 1: Regions
+### Table 1: Regions
 Just like popular cryptocurrency platforms - Data Bank is also run off a network of nodes where both money and data are stored across the globe. In a traditional banking sense - you can think of these nodes as bank branches or stores that exist around the world.
 
 This regions table contains the region_id and their respective region_name values.
@@ -45,7 +45,7 @@ This regions table contains the region_id and their respective region_name value
 | 4	| Asia |
 | 5	| Europe |
 
-# Table 2: Customer Nodes
+### Table 2: Customer Nodes
 Customers are randomly distributed across the nodes according to their region - this also specifies exactly which node contains both their cash and data. This random distribution changes frequently to reduce the risk of hackers getting into Data Bank’s system and stealing customer's money and data!
 
 Below is a sample of the top 10 rows of the data_bank.customer_nodes:
@@ -63,7 +63,8 @@ Below is a sample of the top 10 rows of the data_bank.customer_nodes:
 | 9	| 4	| 5	| 2020-01-21	| 2020-01-25 |
 | 10 | 3	| 4	| 2020-01-13	| 2020-01-14 |
 
-Table 3: Customer Transactions
+### Table 3: Customer Transactions
+
 This table stores all customer deposits, withdrawals and purchases made using their Data Bank debit card.
 
 | customer_id	| txn_date	| txn_type	| txn_amount |
@@ -79,25 +80,25 @@ This table stores all customer deposits, withdrawals and purchases made using th
 | 188| 2020-01-13	| deposit	| 601 |
 | 138| 2020-01-11	| deposit	| 520 |
 
-## Schema
+### Schema
 Relevant schema SQL schema for this case stidy can be found in the repository!
 
 Case Study Questions
 The following case study questions include some general data exploration analysis for the nodes and transactions before diving right into the core business questions and finishing with a challenging final request!
 
-# A. Customer Nodes Exploration
+### A. Customer Nodes Exploration
 How many unique nodes are there on the Data Bank system?
 What is the number of nodes per region?
 How many customers are allocated to each region?
 How many days on average are customers reallocated to a different node?
 What is the median, 80th and 95th percentile for this same reallocation days metric for each region?
-# B. Customer Transactions
+### B. Customer Transactions
 What is the unique count and total amount for each transaction type?
 What is the average total historical deposit counts and amounts for all customers?
 For each month - how many Data Bank customers make more than 1 deposit and either 1 purchase or 1 withdrawal in a single month?
 What is the closing balance for each customer at the end of the month?
 What is the percentage of customers who increase their closing balance by more than 5%?
-# C. Data Allocation Challenge
+### C. Data Allocation Challenge
 To test out a few different hypotheses - the Data Bank team wants to run an experiment where different groups of customers would be allocated data using 3 different options:
 
 Option 1: data is allocated based off the amount of money at the end of the previous month
@@ -110,12 +111,12 @@ customer balance at the end of each month
 minimum, average, and maximum values of the running balance for each customer
 Using all of the data available - how much data would have been required for each option on a monthly basis?
 
-# D. Extra Challenge
+### D. Extra Challenge
 Data Bank wants to try another option which is a bit more difficult to implement - they want to calculate data growth using an interest calculation, just like in a traditional savings account you might have with a bank.
 
 If the annual interest rate is set at 6% and the Data Bank team wants to reward its customers by increasing their data allocation based off the interest calculated on a daily basis at the end of each day, how much data would be required for this option on a monthly basis?
 
-# Special notes:
+## Special notes:
 Data Bank wants an initial calculation which does not allow for compounding interest, however they may also be interested in a daily compounding interest calculation so you can try to perform this calculation if you have the stamina!
 
 

@@ -1,11 +1,12 @@
 # A. Customer Nodes Exploration
 ### 1. How many unique nodes are there on the Data Bank system?
-
-'''SELECT 
+'''sql
+SELECT 
     COUNT(DISTINCT node_id) AS number_of_nodes
 FROM 
-    customer_nodes;'''
-Output:
+    customer_nodes;
+'''
+**Output:**
 
 |number_of_nodes|
 |---------------|

@@ -87,11 +87,12 @@ Case Study Questions
 The following case study questions include some general data exploration analysis for the nodes and transactions before diving right into the core business questions and finishing with a challenging final request!
 
 ### A. Customer Nodes Exploration
-How many unique nodes are there on the Data Bank system?
-What is the number of nodes per region?
-How many customers are allocated to each region?
-How many days on average are customers reallocated to a different node?
-What is the median, 80th and 95th percentile for this same reallocation days metric for each region?
+
+1. How many unique nodes are there on the Data Bank system?
+2. What is the number of nodes per region?
+3. How many customers are allocated to each region?
+4. How many days on average are customers reallocated to a different node?
+5. What is the median, 80th and 95th percentile for this same reallocation days metric for each region?
 
 ### B. Customer Transactions
 1. What is the unique count and total amount for each transaction type?

@@ -50,7 +50,7 @@ Customers are randomly distributed across the nodes according to their region - 
 Below is a sample of the top 10 rows of the data_bank.customer_nodes:
 
 | customer_id	| region_id	| node_id	| start_date	| end_date|
-|-------------|-----------|---------|-------------|---------|
+|----|-----------|---------|-------------|---------|
 | 1	| 3	| 4	| 2020-01-02	| 2020-01-03 |
 | 2	| 3	| 5	| 2020-01-03	| 2020-01-17 |
 | 3	| 5	| 4	| 2020-01-27	| 2020-02-18 |
@@ -65,7 +65,7 @@ Table 3: Customer Transactions
 This table stores all customer deposits, withdrawals and purchases made using their Data Bank debit card.
 
 | customer_id	| txn_date	| txn_type	| txn_amount |
-|-------------|-----------|-----------|------------|
+|----|-----------|-----------|------------|
 | 429	| 2020-01-21	| deposit	| 82 |
 | 155	| 2020-01-10	| deposit	| 712 |
 | 398	| 2020-01-01	| deposit	| 196 |
